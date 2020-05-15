@@ -22,7 +22,7 @@ class XAPIStatmentTest(TestCase):
         with self.assertRaises(MissingUserIdError):
             XAPIStatement(video, {}, MockLtiUser())
 
-    @override_settings(LANGUAGE_CODE="fr-FR")
+    @override_settings(LANGUAGE_CODE="fr-fr")
     def test_xapi_statement_enrich_statement(self):
         """XAPI statement sent by the front application should be enriched."""
         video = VideoFactory(
@@ -93,7 +93,7 @@ class XAPIStatmentTest(TestCase):
                     },
                 },
                 "id": "uuid://68333c45-4b8c-4018-a195-5d5e1706b838",
-                "name": {"fr-FR": "test video xapi"},
+                "name": {"fr_FR": "test video xapi"},
                 "objectType": "Activity",
             },
         )
